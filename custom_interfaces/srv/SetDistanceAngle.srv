@@ -1,0 +1,6 @@
+# SetDistanceAngle.srv
+float64 distance
+float64 angle
+---
+bool success
+string message
