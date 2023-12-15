@@ -25,7 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'doa_to_point_node = wr_package.doa_to_point:main',
-            #'voice_command_node = wr_package.voice_controll:main',
+            'voice_command_node = wr_package.voice_controll:main',
             'nav_node = path_planner_server.nav_to_pose_action_client:main',
             'point_service_node = path_planner_server.odom_to_point:main',
         ],
