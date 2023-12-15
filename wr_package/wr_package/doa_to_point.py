@@ -164,23 +164,9 @@ class DOA(Node):
             fig.canvas.manager.window.move(x, y)
 
     def angle(self,location):
-    ######
-    # We define a meaningful distance measure on the circle
-
-    # Location of original source
-        #azimuth = 90. / 180. * np.pi
+    
         distance = 2.  # meters
 
-        #dim = 2  # dimensions (2 or 3)
-        #room_dim = np.r_[10.0, 10.0]
-
-        # Use AnechoicRoom or ShoeBox implementation. The results are equivalent because max_order=0 for both.
-        # The plots change a little because in one case there are no walls.
-        #use_anechoic_class = True
-
-        #print("============ Using anechoic: {} ==================".format(anechoic))
-
-        #######################
         # algorithms parameters
         SNR = 0.0  # signal-to-noise ratio
         c = 343.0  # speed of sound
@@ -215,10 +201,10 @@ class DOA(Node):
         self.set_fig_window_position(temp_fig,0,0)  
 
 
+        #Extract data from arrom.plot()
         for line in temp_ax.lines:
             self.ax.plot(*line.get_data(), marker=line.get_marker(), color=line.get_color())
         for scatter in temp_ax.collections:
-            # Assuming scatter plot is created using `ax.scatter()`
             offsets = scatter.get_offsets()
             color = scatter.get_edgecolor()
             self.ax.scatter(offsets[:, 0], offsets[:, 1], color=color)

@@ -89,7 +89,7 @@ def main(args=None):
                 except sr.RequestError:
                     print("Sorry, there was an error with the Google Speech Recognition service.")
 
-            # Inner loop for listening to a command after "Hey Robot" is recognized
+            # Inner loop for listening to a command after "Hey Google" is recognized
             while True:
                 command_audio = listen_for_speech(voice_command_publisher.recognizer, voice_command_publisher.microphone)
                 try:
